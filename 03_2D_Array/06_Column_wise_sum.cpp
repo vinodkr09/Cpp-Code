@@ -26,6 +26,7 @@ int main (){
     }
 
     //printing array elements
+    cout<<"printing the array elemnts"<<endl;
     for(int row =0; row<3; row++){
         for(int col=0; col<3; col++){
             cout<<arr[row][col]<<" ";
