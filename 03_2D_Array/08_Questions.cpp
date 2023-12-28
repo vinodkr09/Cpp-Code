@@ -9,3 +9,8 @@ Approach:(1) print starting row
 link-> https://leetcode.com/problems/spiral-matrix/submissions/1123158748/
 
 //Binary Search 2-D Matrix
+link-> https://leetcode.com/problems/search-a-2d-matrix/description/
+ 
+
+ //similar to Binary serach 2-D but not Binary search
+ link-> https://leetcode.com/problems/search-a-2d-matrix-ii/description/
