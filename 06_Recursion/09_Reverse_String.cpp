@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-void reverse(string &str, int i, int j){    // mpercent ka dhyan dena yahan par
+void reverse(string &str, int i, int j){    // mpercent ka dhyan dena yahan par i.e pointer
 
     //base case
     if(i > j){
