@@ -33,7 +33,8 @@ public:
 
 
 int main(){
-    // creation of object 
+    
+   // creation of object 
     Hero ramesh;
 
     cout<<"Ramesh health is: "<< ramesh.getHealth()<<endl;
