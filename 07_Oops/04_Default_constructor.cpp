@@ -1,4 +1,5 @@
 // when object is created constructor is called.
+// A default constructor is a constructor that doesn’t take any argument. It has no parameters.
 
 #include<iostream>
 using namespace std;
