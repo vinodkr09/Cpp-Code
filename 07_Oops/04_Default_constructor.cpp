@@ -11,6 +11,7 @@ private:
 public:
     char level;
 
+// Default constructor
 Hero(){
     cout << "Constructor is called: "<< endl;
 }   
