@@ -10,7 +10,8 @@ private:
    int health;
 
 public:
-    
+
+   // static data memeber intilization inside the class
     static int timeToComplete;
 
     
@@ -21,7 +22,7 @@ public:
     
 };
 
-// static data memeber intilization
+// static data memeber intilization outside the class
 int Hero::timeToComplete = 10;
 
 int main(){
