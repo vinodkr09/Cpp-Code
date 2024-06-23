@@ -29,7 +29,7 @@ Hero(int health){
     this -> level = level;
    }
 
- //khud ka copy constructor banaye hai
+ //userdefined copy constructor
      Hero(Hero &temp){    // temp is object
 
      char *ch = new char[strlen(temp.name) + 1];  // dynamically ek new array create kiye hai
@@ -91,7 +91,7 @@ int main(){
     hero1.name[0] = 'G';
     hero1.print();
 
-    // khud ka copy constructor => deep copy karta hai
+    // Deep copy is possible only with a user-defined copy constructor. I
     hero2.print();
 }
 

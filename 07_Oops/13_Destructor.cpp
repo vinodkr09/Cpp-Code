@@ -1,3 +1,5 @@
+// destructor is the last function that is going to be called before an object is destroyed.
+
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -12,7 +14,7 @@ public:
 
     //Defalut constructor
     Hero(){
-        cout<<"Simple constructor is called";
+        cout<<"Simple constructor is called"<<endl;
         name = new char[100];   // dynamically create kiye hai array isliye new keyword likhe hai
     }
 
@@ -28,6 +30,18 @@ Hero(int health){
     this -> level = level;
    }
 
+ //userdefined copy constructor
+     Hero(Hero &temp){    // temp is object
+
+     char *ch = new char[strlen(temp.name) + 1];  // dynamically ek new array create kiye hai
+     strcpy(ch, temp.name);  // copy kiye hai
+     this -> name = ch;  // this -> name ko assign kiye hai
+
+   cout<<"copy constructor is called" << endl;
+    this->health = temp.health;
+    this->level = temp.level;
+
+}
 
     void print(){
         cout<<endl;
@@ -57,46 +71,25 @@ Hero(int health){
     strcpy(this->name, name);  // strcpy is used to copy string in current name
 
    }
+
+   //Destructor
+   ~Hero(){
+    cout << "Destructor bhai is called" << endl;
+   }
     
 };
 
 int main(){
-    
-    // object hero1 is created
-    Hero hero1;
-    hero1.setHealth(12);
-    hero1.setLevel('D');
-    char name[7] ="Babbar";
-    hero1.setName(name);
+    // static
+    Hero a;
 
-    hero1.print();
+    // Dynamically
+    Hero *b = new Hero();
 
-    // use defalult copy constructor
-    Hero hero2(hero1);  // or Hero hero2 = hero;
-    hero2.print();
+   // manually destructor is  called
+    delete b;
 
-    hero1.name[0] = 'G';
-    hero1.print();
-
-    // default copy constructor does only shallow copy.
-    hero2.print();
 }
 
-
-
-// output:-
-Simple constructor is called
-Name: Babbar , health: 12
-level: D
-
-
-Name: Babbar , health: 12
-level: D
-
-
-Name: Gabbar , health: 12
-level: D
-
-
-Name: Gabbar , health: 12
-level: D
+// constructor har object ke liye ek hi baar call hota hai jb uske creation ke time hota hai
+// destructor har object ke liye ek hi baar call hota hai jb uske destruction ke time hota hai

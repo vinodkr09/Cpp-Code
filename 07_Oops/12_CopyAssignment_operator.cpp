@@ -1,3 +1,4 @@
+// khud ka banaya hua copy constructor use hota hai deep copy me
 #include<iostream>
 #include<cstring>
 using namespace std;
@@ -12,7 +13,7 @@ public:
 
     //Defalut constructor
     Hero(){
-        cout<<"Simple constructor is called";
+        cout<<"Simple constructor is called"<<endl;
         name = new char[100];   // dynamically create kiye hai array isliye new keyword likhe hai
     }
 
@@ -28,6 +29,18 @@ Hero(int health){
     this -> level = level;
    }
 
+ //userdefined copy constructor
+     Hero(Hero &temp){    // temp is object
+
+     char *ch = new char[strlen(temp.name) + 1];  // dynamically ek new array create kiye hai
+     strcpy(ch, temp.name);  // copy kiye hai
+     this -> name = ch;  // this -> name ko assign kiye hai
+
+   cout<<"copy constructor is called" << endl;
+    this->health = temp.health;
+    this->level = temp.level;
+
+}
 
     void print(){
         cout<<endl;
@@ -69,23 +82,27 @@ int main(){
     char name[7] ="Babbar";
     hero1.setName(name);
 
-    hero1.print();
-
     // use defalult copy constructor
     Hero hero2(hero1);  // or Hero hero2 = hero;
-    hero2.print();
-
+   
     hero1.name[0] = 'G';
     hero1.print();
 
-    // default copy constructor does only shallow copy.
+    hero2.print();
+
+    hero1 = hero2;  // copy assignment operator means hero1 me hero2 ka value dal rahe hai
+
+    hero1.print();
+
     hero2.print();
 }
 
 
-
 // output:-
-Simple constructor is called
+Name: Gabbar , health: 12
+level: D
+
+
 Name: Babbar , health: 12
 level: D
 
@@ -94,9 +111,11 @@ Name: Babbar , health: 12
 level: D
 
 
-Name: Gabbar , health: 12
+Name: Babbar , health: 12
 level: D
 
 
-Name: Gabbar , health: 12
-level: D
+
+
+
+
