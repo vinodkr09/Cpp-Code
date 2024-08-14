@@ -1,3 +1,6 @@
+// In Ambiguity, two class have same function name so compiler will not able to decide which function to call first. so we
+// use reference opertaor to tell the complier that use that function first.
+
 #include<iostream>
 using namespace std;
 class A {
